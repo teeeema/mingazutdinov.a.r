@@ -23,7 +23,7 @@
 138 manet
 ```
 
-![Задание 2]((https://github.com/teeeema/mingazutdinov.a.r/blob/main/2.jpg)
+![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/2.jpg)
 
 ## Задача 3
 
