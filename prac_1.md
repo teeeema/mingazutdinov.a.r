@@ -29,11 +29,26 @@
 
 Написать программу banner средствами bash для вывода текстов, как в следующем примере (размер баннера должен меняться!):
 
+![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/3.jpg)
+
 ```
-[root@localhost ~]# ./banner "Hello from RTU MIREA!"
-+-----------------------+
-| Hello from RTU MIREA! |
-+-----------------------+
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "Использование: $0 \"текст\""
+    exit 1
+fi
+
+TEXT="$1"
+
+TEXT_LENGTH=${#TEXT}
+
+BANNER_LENGTH=$((TEXT_LENGTH + 4))
+
+echo "+$(printf "%-${TEXT_LENGTH}s" "" | tr ' ' '-')+"
+echo "| ${TEXT} |"
+echo "+$(printf "%-${TEXT_LENGTH}s" "" | tr ' ' '-')+"
+
 ```
 
 Перед отправкой решения проверьте его в ShellCheck на предупреждения.
