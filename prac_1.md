@@ -7,6 +7,7 @@
 ## Задача 1
 
 Вывести отсортированный в алфавитном порядке список имен пользователей в файле passwd (вам понадобится grep).
+
 ![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/image.png)
 
 ## Задача 2
