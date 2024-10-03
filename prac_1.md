@@ -36,10 +36,14 @@ echo "+$(printf "%-${TEXT_LENGTH}s" "" | tr ' ' '-')+"
 
 Написать программу для вывода всех идентификаторов (по правилам C/C++ или Java) в файле (без повторений).
 
-Пример для hello.c:
+![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/4.jpg)
 
 ```
-h hello include int main n printf return stdio void world
+#!/bin/bash
+file="$1"
+identifiers=$(grep -o -E '\b[a-zA-Z]*\b' "$file" | sort -u)
+echo "Идентификаторы:"
+echo "$identifiers"
 ```
 
 ## Задача 5
