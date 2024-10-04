@@ -50,25 +50,13 @@ echo "$identifiers"
 
 Написать программу для регистрации пользовательской команды (правильные права доступа и копирование в /usr/local/bin).
 
+![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/5.jpg)
+
 ```
 #!/bin/bash
-if [ -z "$1" ]; then
-    echo "Использование: $0 <имя_команды>"
-    exit 1
-fi
-COMMAND_NAME=$1
-if ! command -v "$COMMAND_NAME" &> /dev/null; then
-    echo "Команда '$COMMAND_NAME' не найдена."
-    exit 1
-fi
-sudo cp "$(command -v "$COMMAND_NAME")" /usr/local/bin/
-sudo chmod 755 /usr/local/bin/"$COMMAND_NAME"
-if [ $? -eq 0 ]; then
-    echo "Команда '$COMMAND_NAME' успешно зарегистрирована."
-else
-    echo "Ошибка при регистрации команды '$COMMAND_NAME'."
-    exit 1
-fi
+file=$1
+chmod 755 "./$file"
+sudo cp "$file" /usr/local/bin/
 ```
 
 ## Задача 6
