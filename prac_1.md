@@ -63,23 +63,16 @@ sudo cp "$file" /usr/local/bin/
 
 Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
 
+![Задание 6](https://github.com/teeeema/mingazutdinov.a.r/blob/main/6.jpg)
+
 ```
 #!/bin/bash
-if [ -z "$1" ]; then
-    echo "Использование: $0 <каталог>"
-    exit 1
-fi
-DIR=$1
-find "$DIR" -type f \( -name "*.c" -o -name "*.js" -o -name "*.py" \) | while read -r file; do
-    first_line=$(head -n 1 "$file")
-    if [[ "$file" == *.py && "$first_line" =~ ^# ]]; then
-        echo "Файл $file: содержит комментарий в первой строке."
-    elif [[ "$file" == *.c && ("$first_line" =~ ^// || "$first_line" =~ ^/\*) ]]; then
-        echo "Файл $file: содержит комментарий в первой строке."
-    elif [[ "$file" == *.js && "$first_line" =~ ^// ]]; then
-        echo "Файл $file: содержит комментарий в первой строке."
+for file in *.c *.js *.py; do
+    line=$(head -n 1 "$file")
+    if [[ $line == "#"* || $line == "//"* || $line == "/*"* ]]; then
+        echo "Файл $file начинается с комментария"
     else
-        echo "Файл $file: не содержит комментарий в первой строке."
+        echo "Файл $file не начинается с комментария"
     fi
 done
 ```
@@ -90,21 +83,31 @@ done
 
 ```
 #!/bin/bash
-if [ -z "$1" ]; then
-    echo "Использование: $0 <каталог>"
-    exit 1
-fi
-DIR=$1
-declare -A file_hashes
-find "$DIR" -type f | while read -r file; do
-    file_hash=$(sha256sum "$file" | awk '{print $1}')
-    if [[ -n "${file_hashes[$file_hash]}" ]]; then
-        echo "Найден дубликат: $file"
-        echo "Оригинал: ${file_hashes[$file_hash]}"
-    else
-        file_hashes["$file_hash"]=$file
-    fi
-done
+
+# Хеш-таблица
+declare -A duplicats
+
+# Рекурсивная функция для поиска и вывода дубликатов
+findDuplicates() 
+{
+    local dir="$1"
+    for file in "$dir"/*; do
+        if [[ -f "$file" ]]; then
+            file=$(basename "$file")
+            if [ duplicats["$file"] ]; then
+                duplicats["$file"]=$((duplicats["$file"] + 1))
+            else
+                duplicats["$file"]=1
+            fi
+            if [ "${duplicats["$file"]}" -eq 2 ]; then
+                echo "Файл-дубликат - '$file'"
+            fi
+        elif [[ -d "$file" ]]; then
+            findDuplicates "$file"
+        fi
+    done
+}
+findDuplicates "."
 ```
 
 ## Задача 8
@@ -113,20 +116,9 @@ done
 
 ```
 #!/bin/bash
-if [ "$#" -ne 2 ]; then
-    echo "Использование: $0 <каталог> <расширение>"
-    exit 1
-fi
-DIR=$1
-EXTENSION=$2
-ARCHIVE_NAME="archive_$(date +%Y%m%d_%H%M%S).tar"
-find "$DIR" -type f -name "*.$EXTENSION" | tar -cvf "$ARCHIVE_NAME" -T -
-if [ $? -eq 0 ]; then
-    echo "Файлы с расширением .$EXTENSION успешно архивированы в $ARCHIVE_NAME"
-else
-    echo "Ошибка при создании архива"
-    exit 1
-fi
+files=( $(find . -type f -name "*.$1") )
+tar -cvf "archive.tar" "${files[@]}"
+echo "Архив создан"
 ```
 
 ## Задача 9
@@ -135,23 +127,12 @@ fi
 
 ```
 #!/bin/bash
-if [ "$#" -ne 2 ]; then
-    echo "Использование: $0 <входной_файл> <выходной_файл>"
-    exit 1
-fi
-INPUT_FILE=$1
-OUTPUT_FILE=$2
-if [ ! -f "$INPUT_FILE" ]; then
-    echo "Ошибка: входной файл '$INPUT_FILE' не существует."
-    exit 1
-fi
-sed 's/    /\t/g' "$INPUT_FILE" > "$OUTPUT_FILE"
-if [ $? -eq 0 ]; then
-    echo "Замена успешно выполнена. Результат сохранён в '$OUTPUT_FILE'."
-else
-    echo "Ошибка при обработке файла."
-    exit 1
-fi
+# sed s/что_заменять/на_что_заменять/опции
+# g - Замените все вхождения строки в файле
+# > - передача вывода второму аргументу
+sed 's/    /\t/g' "$1" > "$2"
+# Выводим сообщение об успешном завершении скрипта
+echo "Файл исправлен"
 ```
 
 ## Задача 10
@@ -160,21 +141,11 @@ fi
 
 ```
 #!/bin/bash
-if [ "$#" -ne 1 ]; then
-    echo "Использование: $0 <директория>"
-    exit 1
-fi
-DIR=$1
-if [ ! -d "$DIR" ]; then
-    echo "Ошибка: Директория '$DIR' не существует."
-    exit 1
-fi
-find "$DIR" -type f -name "*.txt" -empty
-if [ $? -eq 0 ]; then
-    echo "Поиск завершён."
-else
-    echo "Ошибка при поиске."
-    exit 1
-fi
-
+# Итерируемся по всем файлам в директории, проверяем, что это текстовый файл и он пустой
+for file in "$1"/*; do
+    # Если найден файл и данный файл имеет размер 0 (т.е -s - true, если размер файла больше 0), 
+    if [[ -f "$file" && ! -s "$file" ]]; then
+        echo "Пустой файл: $file"
+    fi
+done
 ```
