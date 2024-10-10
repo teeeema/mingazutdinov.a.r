@@ -6,7 +6,7 @@
 
 Вывести служебную информацию о пакетах matplotlib. Разобрать основные элементы содержимого фацла со служебной информацией из пакета. Как получить пакет без манеджера пакетов, прямо из репозитория?
 
-![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/1.jpg)
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/1.jpg)
 
 ```
 pip install git+https://github.com/matplotlib/matplotlib.git
