@@ -47,7 +47,7 @@ keywords: [ 'express', 'framework', 'web', 'rest', 'http', 'node' ]
 
 Сформировать graphiz-код и получить изображения зависимостей matplotlib и express
 
-![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/3.jpg)
+![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/3.png)
 
 ```
 
