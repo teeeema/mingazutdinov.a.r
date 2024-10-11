@@ -57,8 +57,20 @@ keywords: [ 'express', 'framework', 'web', 'rest', 'http', 'node' ]
 
 Изучить основы программирования в ограничениях. Решить задачу о счастливых билетах. Добавить ограничение на то, что все цифры билета должны быть различными. Найти минимальное решение для суммы 3 цифр.
 
-```
+![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/4.png)
 
+```
+include "globals.mzn";  
+array[1..6] of var 0..9: digits;
+constraint all_different(digits);
+constraint
+  digits[1] + digits[2] + digits[3] = digits[4] + digits[5] + digits[6];
+var int: sum_digits = digits[1] + digits[2] + digits[3];
+solve minimize sum_digits;
+output [
+  "Билет: \(show(digits[1]))\(show(digits[2]))\(show(digits[3]))\(show(digits[4]))\(show(digits[5]))\(show(digits[6]))\n",
+  "Сумма цифр: \(sum_digits)\n"
+];
 ```
 
 ## Задача 5
