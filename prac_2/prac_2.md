@@ -133,7 +133,17 @@ solve satisfy;
 
 ## Задание 7
 
-```
+![Задание 7](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/7.jpg)
 
+```
+int: n;  % Общее количество пакетов
+set of int: Packages = 1..n;
+array[Packages] of set of Packages: dep
+array[Packages] of var 1..n: install_order;
+constraint 
+    forall(i in Packages, j in dep[i]) (
+        install_order[i] > install_order[j]
+    );
+solve satisfy;
 ```
 
