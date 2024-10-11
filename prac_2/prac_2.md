@@ -73,7 +73,7 @@ digraph matplotlib_deps {
 
 Изучить основы программирования в ограничениях. Решить задачу о счастливых билетах. Добавить ограничение на то, что все цифры билета должны быть различными. Найти минимальное решение для суммы 3 цифр.
 
-![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/4.png)
+![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/4.jpg)
 
 ```
 include "globals.mzn";  
@@ -93,7 +93,7 @@ output [
 
 Решить на MiniZinc задачу о зависимостях пакетов для рисунка, приведенного ниже.
 
-![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/5.png)
+![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/5.jpg)
 
 ```
 enum Menu = { M1_0_0, M1_1_0, M1_2_0, M1_3_0, M1_4_0, M1_5_0 };
@@ -121,7 +121,7 @@ output [
 
 Решить на MiniZinc задачу о зависимостях пакетов для следующих данных:
 
-![Задание 6](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/6.png)
+![Задание 6](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/6.jpg)
 
 ```
 int: root = 100;
