@@ -4,7 +4,7 @@
 
 ## Задача 1
 
-![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/1.jpg)
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_3/1.jpg)
 
 ```
 {
@@ -27,7 +27,7 @@
 
 ## Задача 2
 
-![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/2.jpg)
+![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_3/2.jpg)
 
 ```
 let GroupPrefix = "ИКБО"
@@ -70,7 +70,7 @@ in { groups = groups, students = students, subject = subject }
 
 ## Задача 3
 
-![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/3.png)
+![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_3/3.png)
 
 ```
 
@@ -78,7 +78,7 @@ in { groups = groups, students = students, subject = subject }
 
 ## Задача 4
 
-![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/4.jpg)
+![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_3/4.jpg)
 
 ```
 
@@ -86,7 +86,7 @@ in { groups = groups, students = students, subject = subject }
 
 ## Задача 5
 
-![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_2/5.jpg)
+![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_3/5.jpg)
 
 ```
 
