@@ -89,7 +89,7 @@ in { groups = List/groups, students = students, subject = subject }
 101101
 000
 
-![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_3/3.png)
+![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_3/3.jpg)
 
 ```
 import random
