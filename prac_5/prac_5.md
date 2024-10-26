@@ -24,3 +24,35 @@ git merge first
 git checkout second
 git rebase master  
 ```
+
+## Задача 2
+
+![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_5/2.jpg)
+
+```
+
+```
+
+## Задача 3
+
+![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_5/3.jpg)
+
+```
+
+```
+
+## Задача 4
+
+![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_5/4.jpg)
+
+```
+
+```
+
+## Задача 5
+
+![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_5/5.jpg)
+
+```
+
+```
