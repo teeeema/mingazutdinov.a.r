@@ -27,32 +27,38 @@ git rebase master
 
 ## Задача 2
 
-![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/2.jpg)
+![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/2.1.jpg)
+![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/2.2.jpg)
 
 ```
+92604@Matebook-Tema MINGW64 ~
+$ mkdir my
 
-```
+92604@Matebook-Tema MINGW64 ~
+$ cd my
 
-## Задача 3
+92604@Matebook-Tema MINGW64 ~/my
+$ git init
+Initialized empty Git repository in C:/Users/92604/my/.git/
 
-![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/3.jpg)
+92604@Matebook-Tema MINGW64 ~/my (master)
+$ git config user.name "mingazutdinov.a.r"
 
-```
+92604@Matebook-Tema MINGW64 ~/my (master)
+$ git config user.email "9260410487am@mail.ru"
 
-```
+92604@Matebook-Tema MINGW64 ~/my (master)
+$ nano prog.py
 
-## Задача 4
+92604@Matebook-Tema MINGW64 ~/my (master)
+$ git config --global core.autocrlf false
 
-![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/4.jpg)
+92604@Matebook-Tema MINGW64 ~/my (master)
+$ git add prog.py
 
-```
-
-```
-
-## Задача 5
-
-![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/5.jpg)
-
-```
-
+92604@Matebook-Tema MINGW64 ~/my (master)
+$ git commit -m "Добавление фвйла"
+[master (root-commit) c9b348f] Добавление фвйла
+ 1 file changed, 1 insertion(+)
+ create mode 100644 prog.py
 ```
