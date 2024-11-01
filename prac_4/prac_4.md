@@ -28,7 +28,10 @@ git rebase master
 ## Задача 2
 
 ![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/2.1.jpg)
+
+
 ![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/2.2.jpg)
+
 
 ```
 92604@Matebook-Tema MINGW64 ~
