@@ -1,6 +1,8 @@
 ### Задача 1
 Написать программу на Питоне, которая транслирует граф зависимостей civgraph в makefile в духе примера выше. Для мало знакомых с Питоном используется упрощенный вариант civgraph: civgraph.json.
 
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_6/1.jpg)
+
 ```
 import json
 def load_civgraph(file):
