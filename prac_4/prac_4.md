@@ -34,36 +34,71 @@ git rebase master
 
 
 ```
-92604@Matebook-Tema MINGW64 ~
-$ mkdir my
+git init
+git config user.name "tema"
+git config user.email "92678am@mail.com"
+echo 'print("Hello, World!")' > prog.py
+git add prog.py
+git commit -m "first commit"
 
-92604@Matebook-Tema MINGW64 ~
-$ cd my
+# Создание bare-репозитория
+mkdir -p repository
+cd repository
+git init --bare server
 
-92604@Matebook-Tema MINGW64 ~/my
-$ git init
-Initialized empty Git repository in C:/Users/92604/my/.git/
+# Возвращение в основной репозиторий, подключение к серверу и пуш
+cd ..
+git remote add server repository/server
+git remote -v
+git push server master
 
-92604@Matebook-Tema MINGW64 ~/my (master)
-$ git config user.name "mingazutdinov.a.r"
+# Клонирование серверного репозитория в клиентский
+git clone repository/server repository/client
+cd repository/client
+git config user.name "tema2"
+git config user.email "retuern@gmail.com"
 
-92604@Matebook-Tema MINGW64 ~/my (master)
-$ git config user.email "9260410487am@mail.ru"
+# Добавление нового файла и коммит
+echo "Author Information:" > readme.md
+git add readme.md
+git commit -m "docs"
 
-92604@Matebook-Tema MINGW64 ~/my (master)
-$ nano prog.py
+# Переименование удаленного репозитория и пуш
+git remote rename origin server
+git push server master
 
-92604@Matebook-Tema MINGW64 ~/my (master)
-$ git config --global core.autocrlf false
+# Возвращение в основной репозиторий, чтобы сделать pull
+cd ..
+git pull server master --no-rebase  # Используем merge вместо rebase
 
-92604@Matebook-Tema MINGW64 ~/my (master)
-$ git add prog.py
+# Внесение изменений и пуш
+echo "Author: 92678am@mail.com" >> readme.md
+git add readme.md
+git commit -m "92678am@mail.com info"
+git push server master
 
-92604@Matebook-Tema MINGW64 ~/my (master)
-$ git commit -m "Добавление фвйла"
-[master (root-commit) c9b348f] Добавление фвйла
- 1 file changed, 1 insertion(+)
- create mode 100644 prog.py
+# Переход в клиентский репозиторий и внесение изменений
+cd client
+echo "Author: retuern@gmail.com" >> readme.md
+git add readme.md
+git commit -m "retuern@gmail.com info"
+
+# Перед `push` выполняем `pull` с merge, чтобы избежать линейной истории
+git pull server master --no-rebase
+git push server master
+
+# Получение последних изменений с сервера
+git pull server master --no-rebase
+
+# Последний коммит и пуш исправлений в readme
+git add readme.md
+git commit -m "readme fix"
+git push server master
+
+# Переход к bare-репозиторию и просмотр истории
+cd ..
+cd server
+git log -n 5 --graph --decorate --all
 ```
 
 
