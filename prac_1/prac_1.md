@@ -4,19 +4,19 @@
 
 Вывести отсортированный в алфавитном порядке список имен пользователей в файле passwd (вам понадобится grep).
 
-![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/1.jpg)
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/1.jpg)
 
 ## Задача 2
 
 Вывести данные /etc/protocols в отформатированном и отсортированном порядке для 5 наибольших портов, как показано в примере ниже:
 
-![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/2.jpg)
+![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/2.jpg)
 
 ## Задача 3
 
 Написать программу banner средствами bash для вывода текстов, как в следующем примере (размер баннера должен меняться!):
 
-![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/3.jpg)
+![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/3.jpg)
 
 ```
 #!/bin/bash
@@ -36,7 +36,7 @@ echo "+$(printf "%-${TEXT_LENGTH}s" "" | tr ' ' '-')+"
 
 Написать программу для вывода всех идентификаторов (по правилам C/C++ или Java) в файле (без повторений).
 
-![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/4.jpg)
+![Задание 4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/4.jpg)
 
 ```
 #!/bin/bash
@@ -50,7 +50,7 @@ echo "$identifiers"
 
 Написать программу для регистрации пользовательской команды (правильные права доступа и копирование в /usr/local/bin).
 
-![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/5.jpg)
+![Задание 5](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/5.jpg)
 
 ```
 #!/bin/bash
@@ -63,7 +63,7 @@ sudo cp "$file" /usr/local/bin/
 
 Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
 
-![Задание 6](https://github.com/teeeema/mingazutdinov.a.r/blob/main/6.jpg)
+![Задание 6](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/6.jpg)
 
 ```
 #!/bin/bash
@@ -81,7 +81,7 @@ done
 
 Написать программу для нахождения файлов-дубликатов (имеющих 1 или более копий содержимого) по заданному пути (и подкаталогам).
 
-![Задание 7](https://github.com/teeeema/mingazutdinov.a.r/blob/main/7.jpg)
+![Задание 7](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/7.jpg)
 
 ```
 #!/bin/bash
@@ -116,7 +116,7 @@ findDuplicates "."
 
 Написать программу, которая находит все файлы в данном каталоге с расширением, указанным в качестве аргумента и архивирует все эти файлы в архив tar.
 
-![Задание 8](https://github.com/teeeema/mingazutdinov.a.r/blob/main/8.jpg)
+![Задание 8](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/8.jpg)
 
 ```
 #!/bin/bash
@@ -129,7 +129,7 @@ echo "Архив создан"
 
 Написать программу, которая заменяет в файле последовательности из 4 пробелов на символ табуляции. Входной и выходной файлы задаются аргументами.
 
-![Задание 9](https://github.com/teeeema/mingazutdinov.a.r/blob/main/9.jpg)
+![Задание 9](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/9.jpg)
 
 ```
 #!/bin/bash
@@ -145,7 +145,7 @@ echo "Файл исправлен"
 
 Написать программу, которая выводит названия всех пустых текстовых файлов в указанной директории. Директория передается в программу параметром. 
 
-![Задание 10](https://github.com/teeeema/mingazutdinov.a.r/blob/main/10.jpg)
+![Задание 10](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_1/10.jpg)
 
 ```
 #!/bin/bash
