@@ -4,3 +4,6 @@
 - [Практика_4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_4/prac_4.md)
 - [Практика_6](https://github.com/teeeema/mingazutdinov.a.r/blob/main/prac_6/prac_6.md)
 - [ДЗ_1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_1/DZ_1.md)
+- [ДЗ_2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_2/DZ_2.md)
+- [ДЗ_3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_3/DZ_3.md)
+- [ДЗ_4](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_4/DZ_4.md)
