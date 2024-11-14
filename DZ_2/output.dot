@@ -1,0 +1,8 @@
+digraph dependencies {
+    "pkgA" -> "pkgB";
+    "pkgA" -> "pkgC";
+    "pkgB" -> "pkgD";
+    "pkgC" -> "pkgE";
+    "pkgC" -> "pkgD";
+    "pkgE" -> "pkgF";
+}
