@@ -1,0 +1,3 @@
+NB. Конфигурация с числовыми значениями
+set max_connections = 100;
+set timeout = 30;

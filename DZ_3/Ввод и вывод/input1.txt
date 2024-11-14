@@ -1,0 +1,3 @@
+NB. Пример конфигурации
+set db_host = "localhost";
+set db_port = 5432;
