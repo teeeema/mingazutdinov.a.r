@@ -1,0 +1,5 @@
+<config>
+    <hostname>Tema</hostname>
+    <vfs_path>vfs.zip</vfs_path>
+    <log_path>log.csv</log_path>
+</config>
