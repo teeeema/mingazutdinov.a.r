@@ -20,3 +20,14 @@ zip. Эмулятор должен работать в режиме CLI.
 Все функции эмулятора должны быть покрыты тестами, а для каждой из
 поддерживаемых команд необходимо написать 2 теста.
 
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_1/1.jpg)
+
+## Создание zip
+
+![Задание 2](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_1/2.jpg)
+
+## Создание структуры эмулятора
+
+![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_1/3.jpg)
+
+## Прохождение тестов и запуск эмулятора
