@@ -1,5 +1,0 @@
-<config>
-    <hostname>my_computer</hostname>
-    <filesystem_path>/path/to/filesystem.zip</filesystem_path>
-    <logfile_path>/path/to/log.csv</logfile_path>
-</config>
