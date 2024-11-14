@@ -31,5 +31,5 @@ zip. Эмулятор должен работать в режиме CLI.
 ## Прохождение тестов и запуск эмулятора
 
 ![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_1/3.jpg)
-
+![Задание 3](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_1/4.jpg)
 
