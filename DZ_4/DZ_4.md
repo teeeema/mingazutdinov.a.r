@@ -51,3 +51,15 @@
  
 # Тестовая программа
 Выполнить поэлементно операцию abs() над вектором длины 4. Результат записать в новый вектор.
+
+## Запуск программы
+
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_4/4.jpg)
+
+## Вывод программы
+
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_4/1.jpg)
+
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_4/2.jpg)
+
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_4/3.jpg)
