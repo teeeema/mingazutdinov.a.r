@@ -1,0 +1,17 @@
+- command: LOAD
+  constant: 365
+  opcode: 170
+- address: 0
+  command: WRITE
+  opcode: 121
+- command: LOAD
+  constant: -123
+  opcode: 170
+- address: 1
+  command: ABS
+  opcode: 105
+- command: READ
+  opcode: 183
+- address: 2
+  command: WRITE
+  opcode: 121
