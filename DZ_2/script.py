@@ -87,11 +87,6 @@ class TestDependencyVisualizer(unittest.TestCase):
         # Сравниваем результат функции с ожидаемым значением
         self.assertEqual(dict(dependencies), expected)
 
-    # Дополнительные тесты могут быть добавлены здесь
-
-
-
-
     def test_generate_graphviz_code(self):
         dependencies = {
             'pkgA': {'pkgB', 'pkgC'},
