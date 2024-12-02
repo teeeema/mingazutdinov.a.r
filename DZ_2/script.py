@@ -1,114 +1,27 @@
 import csv
-import os
-from collections import defaultdict
-import unittest
-from collections import defaultdict
+import subprocess
+import sys
+from dependency_visualizer import visualize_dependencies
 
-def read_config(config_path):
-    with open(config_path, 'r', encoding='utf-8') as file:
-        reader = csv.reader(file)
-        config = {}
-        for row in reader:
-            key = row[0].strip()     # Убираем пробелы в начале и конце ключа
-            value = row[1].strip()   # Убираем пробелы в начале и конце значения
-            config[key] = value
-        return config
+def load_config(file_path):
+    with open(file_path, 'r') as config_file:
+        reader = csv.DictReader(config_file)
+        return next(reader)
 
-
-# Получение зависимостей пакета (например, на основе файла Packages или словаря)
-def get_dependencies(package, depth, max_depth, dependencies, visited):
-    if depth >= max_depth:  # если достигли максимальной глубины, остановка
-        return
-    if package in visited:
-        return
-    visited.add(package)
+def main(config_path):
+    config = load_config(config_path)
     
-    # Пример зависимостей
-    package_dependencies = {
-        'pkgA': ['pkgB', 'pkgC'],
-        'pkgB': ['pkgD'],
-        'pkgC': ['pkgD', 'pkgE'],
-        'pkgD': [],
-        'pkgE': ['pkgF'],
-        'pkgF': []
-    }
+    visualize_dependencies(
+        package_name=config['package_name'],
+        output_file=config['output_file'],
+        max_depth=int(config['max_depth']),
+        visualization_tool_path=config['visualization_tool_path'],
+        repo_url=config['repo_url']
+    )
 
-    for dep in package_dependencies.get(package, []):
-        dependencies[package].add(dep)
-        get_dependencies(dep, depth + 1, max_depth, dependencies, visited)
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print("Usage: python main.py <path_to_config.csv>")
+        sys.exit(1)
 
-
-# Генерация кода для Graphviz
-def generate_graphviz_code(dependencies):
-    code = ["digraph dependencies {"]
-    for pkg, deps in dependencies.items():
-        for dep in deps:
-            code.append(f'    "{pkg}" -> "{dep}";')
-    code.append("}")
-    return "\n".join(code)
-
-# Основная функция для построения графа
-def build_dependency_graph(config_path):
-    # Чтение конфигурации
-    config = read_config(config_path)
-    package = config["Имя анализируемого пакета"]
-    max_depth = int(config["Максимальная глубина анализа зависимостей"])
-    output_file = config["Путь к файлу-результату в виде кода"]
-
-    # Получение зависимостей
-    dependencies = defaultdict(set)
-    visited = set()
-    get_dependencies(package, 0, max_depth, dependencies, visited)
-
-    # Генерация Graphviz-кода
-    graphviz_code = generate_graphviz_code(dependencies)
-    print(graphviz_code)  # вывод на экран
-
-    # Запись в файл
-    with open(output_file, 'w') as f:
-        f.write(graphviz_code)
-
-# Тестирование
-import unittest
-
-class TestDependencyVisualizer(unittest.TestCase):
-    def test_get_dependencies(self):
-        # Определяем dependencies как defaultdict
-        dependencies = defaultdict(set)
-        # Запускаем функцию с нужными параметрами
-        get_dependencies('pkgA', 0, 2, dependencies, set())
-        
-        # Ожидаемое значение для проверки
-        expected = {
-            'pkgA': {'pkgB', 'pkgC'},
-            'pkgB': {'pkgD'},
-            'pkgC': {'pkgD', 'pkgE'}
-        }
-        # Сравниваем результат функции с ожидаемым значением
-        self.assertEqual(dict(dependencies), expected)
-
-    def test_generate_graphviz_code(self):
-        dependencies = {
-            'pkgA': {'pkgB', 'pkgC'},
-            'pkgB': {'pkgD'},
-        }
-        generated_code = generate_graphviz_code(dependencies)
-        
-        expected_code = """
-        digraph dependencies {
-            "pkgA" -> "pkgB";
-            "pkgA" -> "pkgC";
-            "pkgB" -> "pkgD";
-        }
-        """
-        
-        # Убираем отступы и преобразуем строки в множества для неупорядоченного сравнения
-        generated_lines = set(line.strip() for line in generated_code.strip().splitlines())
-        expected_lines = set(line.strip() for line in expected_code.strip().splitlines())
-        
-        self.assertEqual(generated_lines, expected_lines)
-
-
-
-if __name__ == "__main__":
-    unittest.main()
+    main(sys.argv[1])
