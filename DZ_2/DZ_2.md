@@ -15,4 +15,4 @@
 
 ## Вывод
 
-![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_2/output.jpg)
+![Задание 1](https://github.com/teeeema/mingazutdinov.a.r/blob/main/DZ_2/output.png)
